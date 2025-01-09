@@ -8,7 +8,6 @@ const router = express.Router()
 
 router.post(
   '/create-admin',
-  Auth(Role.ADMIN),
   ValidationRequest(userValidation.createUserValidation),
   userController.createAdmin,
 )

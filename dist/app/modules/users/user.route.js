@@ -11,7 +11,7 @@ const ValidationRequest_1 = __importDefault(require("../../utils/ValidationReque
 const user_controller_1 = require("./user.controller");
 const user_validation_1 = require("./user.validation");
 const router = express_1.default.Router();
-router.post('/create-admin', (0, Auth_1.default)(client_1.Role.ADMIN), (0, ValidationRequest_1.default)(user_validation_1.userValidation.createUserValidation), user_controller_1.userController.createAdmin);
+router.post('/create-admin', (0, ValidationRequest_1.default)(user_validation_1.userValidation.createUserValidation), user_controller_1.userController.createAdmin);
 router.post('/create-trainer', (0, Auth_1.default)(client_1.Role.ADMIN), (0, ValidationRequest_1.default)(user_validation_1.userValidation.createUserValidation), user_controller_1.userController.createTrainer);
 router.post('/create-user', (0, ValidationRequest_1.default)(user_validation_1.userValidation.createUserValidation), user_controller_1.userController.createUser);
 router.get('/', user_controller_1.userController.retrieveAllUsers);

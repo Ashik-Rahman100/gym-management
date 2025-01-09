@@ -124,10 +124,14 @@
 
 ## Instructions to Run Locally
 
-1. ## Clone the repository:
+1. ## Clone the repository: https://github.com/Ashik-Rahman100/gym-management
 2. Install dependencies:
 
-- yarn
+```bash
+  yarn install
+```
+
+-
 
 3. Configure environment variables:
 
@@ -161,6 +165,7 @@
 ### 1. **Users API**
 
 - **Create Admin/Trainer/Trainee**
+
   - Endpoint: `POST api/v1/users/create-admin`
   - Payload:
     ```json
@@ -174,16 +179,20 @@
   - Expected Response:
     - **201 Created**: Admin user created successfully.
     - **400 Bad Request**: Validation errors.
+
 - **Create Trainer**
+
   - Endpoint: `POST api/v1/users/create-trainer`
   - Requires: `Authorization` header with an admin token.
   - Payload: Same as "Create Admin."
   - Expected Response: Same as "Create Admin."
+
   - **Create Trainee**
   - Endpoint: `POST api/v1/users/create-trainee`
   - Requires: `Authorization` header with an admin token.
   - Payload: Same as "Create Admin."
   - Expected Response: Same as "Create Admin."
+
 - **My Profile**
   - Endpoint: `GET api/v1/users/my-profile`
   - Requires: `Authorization` header with a valid token.
@@ -200,7 +209,7 @@
       "date": "2025-01-10T00:00:00Z",
       "startTime": "2025-01-10T06:00:00Z",
       "endTime": "2025-01-10T08:00:00Z",
-      "trainerId": "da3602d6-7e48-476c-938e-b5d0dd37cf67"
+      "trainerId": "8f7e6bef-d38c-4e2e-bab7-6d74b4430614"
     }
     ```
   - Expected Response:
@@ -218,7 +227,7 @@
   - Payload:
     ```json
     {
-      "scheduleId": "7b0f2358-eb62-4d87-8cbe-fde5242f4a20"
+      "scheduleId": "a1629104-2260-4664-b580-e518a5c0c437"
     }
     ```
   - Expected Response:
