@@ -16,10 +16,10 @@ const http_status_1 = __importDefault(require("http-status"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const config_1 = __importDefault(require("../config"));
 const prisma_1 = __importDefault(require("../helpers/prisma"));
+const CatchAsync_1 = __importDefault(require("../modules/auth/CatchAsync"));
 const AppError_1 = require("../utils/AppError");
-const catchAsync_1 = __importDefault(require("../utils/catchAsync"));
 const Auth = (...userRoles) => {
-    return (0, catchAsync_1.default)((req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    return (0, CatchAsync_1.default)((req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
         const token = req.headers.authorization;
         if (!token) {
             throw new AppError_1.AppError(http_status_1.default.UNAUTHORIZED, 'Unauthorized access!');

@@ -3,11 +3,11 @@ import jwt, { JwtPayload, Secret } from 'jsonwebtoken'
 import config from '../config'
 import prisma from '../helpers/prisma'
 import { DecodedToken } from '../interface'
+import CatchAsync from '../modules/auth/CatchAsync'
 import { AppError } from '../utils/AppError'
-import catchAsync from '../utils/catchAsync'
 
 const Auth = (...userRoles: string[]) => {
-  return catchAsync(async (req, res, next) => {
+  return CatchAsync(async (req, res, next) => {
     const token = req.headers.authorization
 
     if (!token) {

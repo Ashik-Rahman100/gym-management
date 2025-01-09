@@ -6,7 +6,7 @@
 
 ## ERD Diagram :
 
-![Relational Diagram](gym-management-diagram.png)
+![Relational Diagram](gym-management.drawio.png)
 
 ## Technology Stack
 
@@ -124,8 +124,7 @@
 
 ## Instructions to Run Locally
 
-1. Clone the repository:
-   -
+1. ## Clone the repository:
 2. Install dependencies:
 
 - yarn
@@ -155,45 +154,45 @@
 
 ## Live Hosting Link
 
-[Gym Management System](https://gym-management-xi-flax.vercel.app/)
+[Gym Management System](https://gym-management-theta.vercel.app/)
 
 ## Testing Instructions
 
 ### 1. **Users API**
 
 - **Create Admin/Trainer/Trainee**
-  - Endpoint: `POST api/users/create-admin`
+  - Endpoint: `POST api/v1/users/create-admin`
   - Payload:
     ```json
     {
       "firstName": "MR.",
       "lastName": "User",
-      "email": "user@gmail.com.com",
-      "password": "user123"
+      "email": "admin@gmail.com",
+      "password": "admin123@"
     }
     ```
   - Expected Response:
     - **201 Created**: Admin user created successfully.
     - **400 Bad Request**: Validation errors.
 - **Create Trainer**
-  - Endpoint: `POST api/users/create-trainer`
+  - Endpoint: `POST api/v1/users/create-trainer`
   - Requires: `Authorization` header with an admin token.
   - Payload: Same as "Create Admin."
   - Expected Response: Same as "Create Admin."
   - **Create Trainee**
-  - Endpoint: `POST api/users/create-trainee`
+  - Endpoint: `POST api/v1/users/create-trainee`
   - Requires: `Authorization` header with an admin token.
   - Payload: Same as "Create Admin."
   - Expected Response: Same as "Create Admin."
 - **My Profile**
-  - Endpoint: `GET api/users/my-profile`
+  - Endpoint: `GET api/v1/users/my-profile`
   - Requires: `Authorization` header with a valid token.
   - Expected Response: User profile details.
 
 ### 2. **Class Schedule API**
 
 - **Create Class Schedule**
-  - Endpoint: `POST api/class-schedule/`
+  - Endpoint: `POST api/v1/class-schedule/`
   - Requires: `Authorization` header with an admin token.
   - Payload:
     ```json
@@ -219,7 +218,7 @@
   - Payload:
     ```json
     {
-      "scheduleId": "278ff3f2-eb81-4c3d-a572-63d34d3e100a"
+      "scheduleId": "7b0f2358-eb62-4d87-8cbe-fde5242f4a20"
     }
     ```
   - Expected Response:
@@ -237,7 +236,7 @@
   - Payload:
     ```json
     {
-      "email": "user@example.com",
+      "email": "user@gmail.com",
       "password": "password"
     }
     ```

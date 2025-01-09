@@ -14,10 +14,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.userController = void 0;
 const http_status_1 = __importDefault(require("http-status"));
-const catchAsync_1 = __importDefault(require("../../utils/catchAsync"));
 const sendResponse_1 = __importDefault(require("../../utils/sendResponse"));
+const CatchAsync_1 = __importDefault(require("../auth/CatchAsync"));
 const user_services_1 = require("./user.services");
-const createUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const createUser = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const data = yield user_services_1.userServices.createUser(req.body);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.CREATED,
@@ -26,7 +26,7 @@ const createUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, voi
         data,
     });
 }));
-const createAdmin = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const createAdmin = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const data = yield user_services_1.userServices.createAdmin(req.body);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.CREATED,
@@ -35,7 +35,7 @@ const createAdmin = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, vo
         data,
     });
 }));
-const createTrainer = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const createTrainer = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const data = yield user_services_1.userServices.createTrainer(req.body);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.CREATED,
@@ -44,7 +44,7 @@ const createTrainer = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, 
         data,
     });
 }));
-const retrieveAllUsers = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const retrieveAllUsers = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const data = yield user_services_1.userServices.retrieveAllUsers();
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
@@ -53,7 +53,7 @@ const retrieveAllUsers = (0, catchAsync_1.default)((req, res) => __awaiter(void 
         data,
     });
 }));
-const retrieveMyProfile = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const retrieveMyProfile = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     const data = yield user_services_1.userServices.retrieveMyProfile(id);
     (0, sendResponse_1.default)(res, {
@@ -63,7 +63,7 @@ const retrieveMyProfile = (0, catchAsync_1.default)((req, res) => __awaiter(void
         data,
     });
 }));
-const updateUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const updateUser = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     const data = yield user_services_1.userServices.updateUser(id, req.body);
     (0, sendResponse_1.default)(res, {
@@ -73,7 +73,7 @@ const updateUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, voi
         data,
     });
 }));
-const deleteUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const deleteUser = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     const data = yield user_services_1.userServices.deleteUser(id);
     (0, sendResponse_1.default)(res, {

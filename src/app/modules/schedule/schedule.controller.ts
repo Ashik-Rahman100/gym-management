@@ -1,10 +1,9 @@
 import httpStatus from 'http-status'
-
-import catchAsync from '../../utils/catchAsync'
 import sendResponse from '../../utils/sendResponse'
+import CatchAsync from '../auth/CatchAsync'
 import { classScheduleServices } from './schedule.services'
 
-const createClassSchedule = catchAsync(async (req, res) => {
+const createClassSchedule = CatchAsync(async (req, res) => {
   const data = await classScheduleServices.createClassSchedule(req.body)
 
   sendResponse(res, {
@@ -14,7 +13,7 @@ const createClassSchedule = catchAsync(async (req, res) => {
     data,
   })
 })
-const retrieveAllClassSchedule = catchAsync(async (req, res) => {
+const retrieveAllClassSchedule = CatchAsync(async (req, res) => {
   const data = await classScheduleServices.retrieveAllClassSchedule()
 
   sendResponse(res, {
@@ -24,7 +23,7 @@ const retrieveAllClassSchedule = catchAsync(async (req, res) => {
     data,
   })
 })
-const retrieveSingleClassSchedule = catchAsync(async (req, res) => {
+const retrieveSingleClassSchedule = CatchAsync(async (req, res) => {
   const { id } = req.params
   const data = await classScheduleServices.retrieveSingleClassSchedule(id)
 
@@ -35,7 +34,7 @@ const retrieveSingleClassSchedule = catchAsync(async (req, res) => {
     data,
   })
 })
-const updateClassSchedule = catchAsync(async (req, res) => {
+const updateClassSchedule = CatchAsync(async (req, res) => {
   const { id } = req.params
   const data = await classScheduleServices.updateClassSchedule(id, req.body)
 
@@ -46,7 +45,7 @@ const updateClassSchedule = catchAsync(async (req, res) => {
     data,
   })
 })
-const deleteClassSchedule = catchAsync(async (req, res) => {
+const deleteClassSchedule = CatchAsync(async (req, res) => {
   const { id } = req.params
   const data = await classScheduleServices.deleteClassSchedule(id)
 

@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "5808499d-363e-478f-aff6-33da4ec1b79d",
+		"_postman_id": "24c00fd1-3fcb-4de6-a7ad-db582934021c",
 		"name": "Gym Management",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "30863953"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25360666"
 	},
 	"item": [
 		{
@@ -23,7 +23,20 @@
 								}
 							}
 						},
-						"url": "https://gym-management-xi-flax.vercel.app/api/users/create-admin"
+						"url": {
+							"raw": "https://gym-management-xi-flax.vercel.app/api/users/create-admin",
+							"protocol": "https",
+							"host": [
+								"gym-management-xi-flax",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"users",
+								"create-admin"
+							]
+						}
 					},
 					"response": []
 				},
@@ -47,7 +60,17 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/api/users/create-trainer"
+						"url": {
+							"raw": "{{base_url}}/api/users/create-trainer",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"create-trainer"
+							]
+						}
 					},
 					"response": []
 				},
@@ -65,7 +88,17 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/api/users/create-user"
+						"url": {
+							"raw": "{{base_url}}/api/users/create-user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"create-user"
+							]
+						}
 					},
 					"response": []
 				},
@@ -86,7 +119,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:5000/api/users"
+						"url": {
+							"raw": "http://localhost:5000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
 					},
 					"response": []
 				},
@@ -113,7 +157,19 @@
 								}
 							}
 						},
-						"url": "http://localhost:5000/api/users/my-profile"
+						"url": {
+							"raw": "http://localhost:5000/api/users/my-profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"my-profile"
+							]
+						}
 					},
 					"response": []
 				},
@@ -122,7 +178,19 @@
 					"request": {
 						"method": "PATCH",
 						"header": [],
-						"url": "http://localhost:5000/api/users/9f126005-15a0-4bcd-8875-db4cdf432bab"
+						"url": {
+							"raw": "http://localhost:5000/api/users/9f126005-15a0-4bcd-8875-db4cdf432bab",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"9f126005-15a0-4bcd-8875-db4cdf432bab"
+							]
+						}
 					},
 					"response": []
 				},
@@ -131,7 +199,19 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:5000/api/users/647e89ca-1ae5-48ae-98aa-f86a631ccd9e"
+						"url": {
+							"raw": "http://localhost:5000/api/users/647e89ca-1ae5-48ae-98aa-f86a631ccd9e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"647e89ca-1ae5-48ae-98aa-f86a631ccd9e"
+							]
+						}
 					},
 					"response": []
 				}
@@ -160,7 +240,16 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/api/class-schedule"
+						"url": {
+							"raw": "{{base_url}}/api/class-schedule",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"class-schedule"
+							]
+						}
 					},
 					"response": []
 				},
@@ -169,7 +258,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{base_url}}/api/class-schedule"
+						"url": {
+							"raw": "{{base_url}}/api/class-schedule",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"class-schedule"
+							]
+						}
 					},
 					"response": []
 				},
@@ -178,7 +276,19 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:5000/api/class-schedule/6f48ef5f-244c-40b8-8fba-54069b60109b"
+						"url": {
+							"raw": "http://localhost:5000/api/class-schedule/6f48ef5f-244c-40b8-8fba-54069b60109b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"class-schedule",
+								"6f48ef5f-244c-40b8-8fba-54069b60109b"
+							]
+						}
 					},
 					"response": []
 				},
@@ -187,7 +297,19 @@
 					"request": {
 						"method": "PATCH",
 						"header": [],
-						"url": "http://localhost:5000/api/class-schedule/9f126005-15a0-4bcd-8875-db4cdf432bab"
+						"url": {
+							"raw": "http://localhost:5000/api/class-schedule/9f126005-15a0-4bcd-8875-db4cdf432bab",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"class-schedule",
+								"9f126005-15a0-4bcd-8875-db4cdf432bab"
+							]
+						}
 					},
 					"response": []
 				},
@@ -196,7 +318,17 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{base_url}}/api/class-schedule/453da323-613d-41fa-8c8b-31eabf8bf1df"
+						"url": {
+							"raw": "{{base_url}}/api/class-schedule/453da323-613d-41fa-8c8b-31eabf8bf1df",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"class-schedule",
+								"453da323-613d-41fa-8c8b-31eabf8bf1df"
+							]
+						}
 					},
 					"response": []
 				}
@@ -225,7 +357,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:5000/api/booking-schedule"
+						"url": {
+							"raw": "http://localhost:5000/api/booking-schedule",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"booking-schedule"
+							]
+						}
 					},
 					"response": []
 				},
@@ -240,7 +383,19 @@
 								"type": "text"
 							}
 						],
-						"url": "http://localhost:5000/api/booking-schedule/my-booking-schedules"
+						"url": {
+							"raw": "http://localhost:5000/api/booking-schedule/my-booking-schedules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"booking-schedule",
+								"my-booking-schedules"
+							]
+						}
 					},
 					"response": []
 				},
@@ -264,7 +419,19 @@
 								}
 							}
 						},
-						"url": "http://localhost:5000/api/booking-schedule/57543cc1-5e96-4fb7-95a3-f753ec1965e8"
+						"url": {
+							"raw": "http://localhost:5000/api/booking-schedule/57543cc1-5e96-4fb7-95a3-f753ec1965e8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"booking-schedule",
+								"57543cc1-5e96-4fb7-95a3-f753ec1965e8"
+							]
+						}
 					},
 					"response": []
 				},
@@ -273,7 +440,20 @@
 					"request": {
 						"method": "PATCH",
 						"header": [],
-						"url": "http://localhost:5000/api/booking-schedule/update-status/9f126005-15a0-4bcd-8875-db4cdf432bab"
+						"url": {
+							"raw": "http://localhost:5000/api/booking-schedule/update-status/9f126005-15a0-4bcd-8875-db4cdf432bab",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"booking-schedule",
+								"update-status",
+								"9f126005-15a0-4bcd-8875-db4cdf432bab"
+							]
+						}
 					},
 					"response": []
 				},
@@ -282,7 +462,19 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:5000/api/booking-schedule/9f126005-15a0-4bcd-8875-db4cdf432bab"
+						"url": {
+							"raw": "http://localhost:5000/api/booking-schedule/9f126005-15a0-4bcd-8875-db4cdf432bab",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"booking-schedule",
+								"9f126005-15a0-4bcd-8875-db4cdf432bab"
+							]
+						}
 					},
 					"response": []
 				}
@@ -305,7 +497,17 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/api/auth/login"
+						"url": {
+							"raw": "{{base_url}}/api/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
 					},
 					"response": []
 				}

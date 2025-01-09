@@ -14,10 +14,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.bookingController = void 0;
 const http_status_1 = __importDefault(require("http-status"));
-const catchAsync_1 = __importDefault(require("../../utils/catchAsync"));
 const sendResponse_1 = __importDefault(require("../../utils/sendResponse"));
+const CatchAsync_1 = __importDefault(require("../auth/CatchAsync"));
 const booking_services_1 = require("./booking.services");
-const createBookingSchedule = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const createBookingSchedule = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req === null || req === void 0 ? void 0 : req.user;
     const data = yield booking_services_1.bookingServices.createBookingSchedule(id, req.body);
     (0, sendResponse_1.default)(res, {
@@ -27,7 +27,7 @@ const createBookingSchedule = (0, catchAsync_1.default)((req, res) => __awaiter(
         data,
     });
 }));
-const retrieveMyAllBookingSchedule = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const retrieveMyAllBookingSchedule = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req === null || req === void 0 ? void 0 : req.user;
     const data = yield booking_services_1.bookingServices.retrieveMyAllBookingSchedule(id);
     (0, sendResponse_1.default)(res, {
@@ -37,7 +37,7 @@ const retrieveMyAllBookingSchedule = (0, catchAsync_1.default)((req, res) => __a
         data,
     });
 }));
-const retrieveSingleBookingSchedule = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const retrieveSingleBookingSchedule = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     const data = yield booking_services_1.bookingServices.retrieveSingleBookingSchedule(id);
     (0, sendResponse_1.default)(res, {
@@ -47,7 +47,7 @@ const retrieveSingleBookingSchedule = (0, catchAsync_1.default)((req, res) => __
         data,
     });
 }));
-const updateBookingSchedule = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const updateBookingSchedule = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     const data = yield booking_services_1.bookingServices.updateBookingSchedule(id, req.body);
     (0, sendResponse_1.default)(res, {
@@ -57,7 +57,7 @@ const updateBookingSchedule = (0, catchAsync_1.default)((req, res) => __awaiter(
         data,
     });
 }));
-const updateBookingScheduleStatus = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const updateBookingScheduleStatus = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     const data = yield booking_services_1.bookingServices.updateBookingSchedule(id, req.body);
     (0, sendResponse_1.default)(res, {
@@ -67,7 +67,7 @@ const updateBookingScheduleStatus = (0, catchAsync_1.default)((req, res) => __aw
         data,
     });
 }));
-const deleteBookingSchedule = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const deleteBookingSchedule = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     const data = yield booking_services_1.bookingServices.deleteBookingSchedule(id);
     (0, sendResponse_1.default)(res, {

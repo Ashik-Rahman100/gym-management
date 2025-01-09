@@ -1,10 +1,11 @@
 import httpStatus from 'http-status'
 import config from '../../config'
-import catchAsync from '../../utils/catchAsync'
+
 import sendResponse from '../../utils/sendResponse'
 import { authServices } from './auth.services'
+import CatchAsync from './CatchAsync'
 
-const userLogin = catchAsync(async (req, res) => {
+const userLogin = CatchAsync(async (req, res) => {
   const data = await authServices.userLogin(req.body)
   console.log(data)
 

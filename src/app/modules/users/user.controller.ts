@@ -1,9 +1,10 @@
 import httpStatus from 'http-status'
-import catchAsync from '../../utils/catchAsync'
+
 import sendResponse from '../../utils/sendResponse'
+import CatchAsync from '../auth/CatchAsync'
 import { userServices } from './user.services'
 
-const createUser = catchAsync(async (req, res) => {
+const createUser = CatchAsync(async (req, res) => {
   const data = await userServices.createUser(req.body)
 
   sendResponse(res, {
@@ -13,7 +14,7 @@ const createUser = catchAsync(async (req, res) => {
     data,
   })
 })
-const createAdmin = catchAsync(async (req, res) => {
+const createAdmin = CatchAsync(async (req, res) => {
   const data = await userServices.createAdmin(req.body)
 
   sendResponse(res, {
@@ -23,7 +24,7 @@ const createAdmin = catchAsync(async (req, res) => {
     data,
   })
 })
-const createTrainer = catchAsync(async (req, res) => {
+const createTrainer = CatchAsync(async (req, res) => {
   const data = await userServices.createTrainer(req.body)
 
   sendResponse(res, {
@@ -33,7 +34,7 @@ const createTrainer = catchAsync(async (req, res) => {
     data,
   })
 })
-const retrieveAllUsers = catchAsync(async (req, res) => {
+const retrieveAllUsers = CatchAsync(async (req, res) => {
   const data = await userServices.retrieveAllUsers()
 
   sendResponse(res, {
@@ -43,7 +44,7 @@ const retrieveAllUsers = catchAsync(async (req, res) => {
     data,
   })
 })
-const retrieveMyProfile = catchAsync(async (req, res) => {
+const retrieveMyProfile = CatchAsync(async (req, res) => {
   const { id } = req.params
   const data = await userServices.retrieveMyProfile(id)
 
@@ -54,7 +55,7 @@ const retrieveMyProfile = catchAsync(async (req, res) => {
     data,
   })
 })
-const updateUser = catchAsync(async (req, res) => {
+const updateUser = CatchAsync(async (req, res) => {
   const { id } = req.params
   const data = await userServices.updateUser(id, req.body)
 
@@ -65,7 +66,7 @@ const updateUser = catchAsync(async (req, res) => {
     data,
   })
 })
-const deleteUser = catchAsync(async (req, res) => {
+const deleteUser = CatchAsync(async (req, res) => {
   const { id } = req.params
   const data = await userServices.deleteUser(id)
 

@@ -1,10 +1,11 @@
 import { Request, Response } from 'express'
 import httpStatus from 'http-status'
-import catchAsync from '../../utils/catchAsync'
+
 import sendResponse from '../../utils/sendResponse'
+import CatchAsync from '../auth/CatchAsync'
 import { bookingServices } from './booking.services'
 
-const createBookingSchedule = catchAsync(
+const createBookingSchedule = CatchAsync(
   async (req: Request & { user?: any }, res: Response) => {
     const { id } = req?.user
     const data = await bookingServices.createBookingSchedule(id, req.body)
@@ -17,7 +18,7 @@ const createBookingSchedule = catchAsync(
     })
   },
 )
-const retrieveMyAllBookingSchedule = catchAsync(
+const retrieveMyAllBookingSchedule = CatchAsync(
   async (req: Request & { user?: any }, res: Response) => {
     const { id } = req?.user
     const data = await bookingServices.retrieveMyAllBookingSchedule(id)
@@ -30,7 +31,7 @@ const retrieveMyAllBookingSchedule = catchAsync(
     })
   },
 )
-const retrieveSingleBookingSchedule = catchAsync(async (req, res) => {
+const retrieveSingleBookingSchedule = CatchAsync(async (req, res) => {
   const { id } = req.params
   const data = await bookingServices.retrieveSingleBookingSchedule(id)
 
@@ -41,7 +42,7 @@ const retrieveSingleBookingSchedule = catchAsync(async (req, res) => {
     data,
   })
 })
-const updateBookingSchedule = catchAsync(async (req, res) => {
+const updateBookingSchedule = CatchAsync(async (req, res) => {
   const { id } = req.params
   const data = await bookingServices.updateBookingSchedule(id, req.body)
 
@@ -52,7 +53,7 @@ const updateBookingSchedule = catchAsync(async (req, res) => {
     data,
   })
 })
-const updateBookingScheduleStatus = catchAsync(async (req, res) => {
+const updateBookingScheduleStatus = CatchAsync(async (req, res) => {
   const { id } = req.params
   const data = await bookingServices.updateBookingSchedule(id, req.body)
 
@@ -63,7 +64,7 @@ const updateBookingScheduleStatus = catchAsync(async (req, res) => {
     data,
   })
 })
-const deleteBookingSchedule = catchAsync(async (req, res) => {
+const deleteBookingSchedule = CatchAsync(async (req, res) => {
   const { id } = req.params
   const data = await bookingServices.deleteBookingSchedule(id)
 
