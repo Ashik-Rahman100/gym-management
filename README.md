@@ -154,7 +154,7 @@
 
 ## Live Hosting Link
 
-[Gym Management System](https://gym-management-theta.vercel.app/)
+[Gym Management System](https://gym-management-theta.vercel.app)
 
 ## Testing Instructions
 
