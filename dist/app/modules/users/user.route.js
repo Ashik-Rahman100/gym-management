@@ -1,0 +1,21 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.userRoute = void 0;
+const client_1 = require("@prisma/client");
+const express_1 = __importDefault(require("express"));
+const Auth_1 = __importDefault(require("../../middlewares/Auth"));
+const ValidationRequest_1 = __importDefault(require("../../utils/ValidationRequest"));
+const user_controller_1 = require("./user.controller");
+const user_validation_1 = require("./user.validation");
+const router = express_1.default.Router();
+router.post('/create-admin', (0, Auth_1.default)(client_1.Role.ADMIN), (0, ValidationRequest_1.default)(user_validation_1.userValidation.createUserValidation), user_controller_1.userController.createAdmin);
+router.post('/create-trainer', (0, Auth_1.default)(client_1.Role.ADMIN), (0, ValidationRequest_1.default)(user_validation_1.userValidation.createUserValidation), user_controller_1.userController.createTrainer);
+router.post('/create-user', (0, ValidationRequest_1.default)(user_validation_1.userValidation.createUserValidation), user_controller_1.userController.createUser);
+router.get('/', user_controller_1.userController.retrieveAllUsers);
+router.get('/my-profile', (0, Auth_1.default)(client_1.Role.ADMIN, client_1.Role.TRAINEE, client_1.Role.TRAINER), user_controller_1.userController.retrieveMyProfile);
+router.patch('/:id', user_controller_1.userController.updateUser);
+router.delete('/:id', user_controller_1.userController.deleteUser);
+exports.userRoute = router;

@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "5808499d-363e-478f-aff6-33da4ec1b79d",
+		"name": "Gym Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30863953"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Alice\",\r\n    \"lastName\": \"Smith\",\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"admin123\",\r\n    \"profileImage\": \"https://example.com/profiles/admin.jpg\",\r\n    \"phone\": \"+1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://gym-management-xi-flax.vercel.app/api/users/create-admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Trainer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwibmFtZSI6IkFsaWNlIFNtaXRoIiwicm9sZSI6IkFETUlOIiwiaWQiOiI1Mzg0MjFmNC00YTM5LTQ2YWUtYmRjZS1mZDMzZTI0ZmQ0OTAiLCJpYXQiOjE3MzYzODg5NDksImV4cCI6MTczNzI1Mjk0OX0.QlmENfwdMY4J9eyBCPTVsRRhzOT6LeqD_XenH9_1zhA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Mr.\",\r\n    \"lastName\": \"Trainer\",\r\n    \"email\": \"trainer@gmail.com\",\r\n    \"password\": \"trainer123\",\r\n    \"profileImage\": \"https://example.com/profiles/admin.jpg\",\r\n    \"phone\": \"+1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/users/create-trainer"
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"MR.\",\r\n    \"lastName\": \"User\",\r\n    \"email\": \"user@gmail.com.com\",\r\n    \"password\": \"user123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/users/create-user"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve All Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "My Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyYWluZWUyQGV4YW1wbGUuY29tIiwibmFtZSI6IkxpYW0gV2lsbGlhbXMiLCJyb2xlIjoiVFJBSU5FRSIsImlkIjoiMWVkNWIxYzgtMWRhZC00ZGE3LThlOTQtZmM3ZmY4NDU2OTA0IiwiaWF0IjoxNzM2MzkyMjU3LCJleHAiOjE3MzcyNTYyNTd9.B32ryzwI0VusRCku9wU2RGmd-dJPsRcIlgcYTbAhtnA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Alice\",\r\n    \"lastName\": \"Smith\",\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"admin123\",\r\n    \"profileImage\": \"https://example.com/profiles/admin.jpg\",\r\n    \"phone\": \"+1234567890\",\r\n    \"role\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/users/my-profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": "http://localhost:5000/api/users/9f126005-15a0-4bcd-8875-db4cdf432bab"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:5000/api/users/647e89ca-1ae5-48ae-98aa-f86a631ccd9e"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client Schedule",
+			"item": [
+				{
+					"name": "Create Schedule",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwibmFtZSI6IkFsaWNlIFNtaXRoIiwicm9sZSI6IkFETUlOIiwiaWQiOiI1Mzg0MjFmNC00YTM5LTQ2YWUtYmRjZS1mZDMzZTI0ZmQ0OTAiLCJpYXQiOjE3MzYzODg5NDksImV4cCI6MTczNzI1Mjk0OX0.QlmENfwdMY4J9eyBCPTVsRRhzOT6LeqD_XenH9_1zhA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2025-01-11T00:00:00Z\",\r\n    \"startTime\": \"2025-01-11T09:30:00Z\",\r\n    \"endTime\": \"2025-01-11T11:30:00Z\",\r\n    \"trainerId\": \"da3602d6-7e48-476c-938e-b5d0dd37cf67\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/class-schedule"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve All Schedule",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/api/class-schedule"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve single schedule",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/class-schedule/6f48ef5f-244c-40b8-8fba-54069b60109b"
+					},
+					"response": []
+				},
+				{
+					"name": "Update schedule",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": "http://localhost:5000/api/class-schedule/9f126005-15a0-4bcd-8875-db4cdf432bab"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete schedule",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base_url}}/api/class-schedule/453da323-613d-41fa-8c8b-31eabf8bf1df"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking Schedule",
+			"item": [
+				{
+					"name": "Book Schedule",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyYWluZWUyQGV4YW1wbGUuY29tIiwibmFtZSI6IkxpYW0gV2lsbGlhbXMiLCJyb2xlIjoiVFJBSU5FRSIsImlkIjoiMWVkNWIxYzgtMWRhZC00ZGE3LThlOTQtZmM3ZmY4NDU2OTA0IiwiaWF0IjoxNzM2MzkyMjU3LCJleHAiOjE3MzcyNTYyNTd9.B32ryzwI0VusRCku9wU2RGmd-dJPsRcIlgcYTbAhtnA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"scheduleId\": \"6f48ef5f-244c-40b8-8fba-54069b60109b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/booking-schedule"
+					},
+					"response": []
+				},
+				{
+					"name": "User's Appointments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyYWluZWUyQGV4YW1wbGUuY29tIiwibmFtZSI6IkxpYW0gV2lsbGlhbXMiLCJyb2xlIjoiVFJBSU5FRSIsImlkIjoiMWVkNWIxYzgtMWRhZC00ZGE3LThlOTQtZmM3ZmY4NDU2OTA0IiwiaWF0IjoxNzM2MzkyMjU3LCJleHAiOjE3MzcyNTYyNTd9.B32ryzwI0VusRCku9wU2RGmd-dJPsRcIlgcYTbAhtnA",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:5000/api/booking-schedule/my-booking-schedules"
+					},
+					"response": []
+				},
+				{
+					"name": "Update booking Schedule",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyYWluZWUyQGV4YW1wbGUuY29tIiwibmFtZSI6IkxpYW0gV2lsbGlhbXMiLCJyb2xlIjoiVFJBSU5FRSIsImlkIjoiMWVkNWIxYzgtMWRhZC00ZGE3LThlOTQtZmM3ZmY4NDU2OTA0IiwiaWF0IjoxNzM2MzkyMjU3LCJleHAiOjE3MzcyNTYyNTd9.B32ryzwI0VusRCku9wU2RGmd-dJPsRcIlgcYTbAhtnA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"CANCELED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/booking-schedule/57543cc1-5e96-4fb7-95a3-f753ec1965e8"
+					},
+					"response": []
+				},
+				{
+					"name": "Update booking status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": "http://localhost:5000/api/booking-schedule/update-status/9f126005-15a0-4bcd-8875-db4cdf432bab"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete booking schedule",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:5000/api/booking-schedule/9f126005-15a0-4bcd-8875-db4cdf432bab"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"admin1235\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/auth/login"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://gym-management-xi-flax.vercel.app",
+			"type": "string"
+		}
+	]
+}
